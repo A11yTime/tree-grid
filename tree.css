@@ -1,0 +1,56 @@
+/* Basic styles for tree grid */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  [role="tree"] {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  [role="treegrid"] {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  [role="row"] {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 4px 0;
+  }
+  
+  [role="gridcell"] {
+    padding: 8px;
+    border-right: 1px solid #ccc;
+    flex: 1;
+    text-align: left;
+  }
+  
+  [role="gridcell"]:last-child {
+    border-right: none;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    margin-right: 8px;
+    color: #007bff;
+  }
+  
+  button[aria-expanded="true"]::after {
+    content: "[-]";
+  }
+  
+  button[aria-expanded="false"]::after {
+    content: "[+]";
+  }
+  
+  /* Hide elements with aria-hidden="true" */
+  [aria-hidden="true"] {
+    display: none;
+  }
+  

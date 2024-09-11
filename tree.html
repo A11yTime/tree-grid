@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Tree Grid</title>
+  <link rel="stylesheet" href="tree.css">
+</head>
+<body>
+  <div role="tree" aria-label="Company Structure">
+    <div role="treegrid" aria-label="Tree Grid Example" aria-rowcount="5" aria-colcount="4">
+      <!-- Row 1 -->
+      <div role="row" aria-level="1" aria-setsize="2" aria-posinset="1">
+        <div role="gridcell" aria-colindex="1">
+          <button aria-expanded="true" aria-controls="node1" aria-label="Toggle Department A" id="toggleA">+</button>
+          Department A
+        </div>
+        <div role="gridcell" aria-colindex="2">Value A1</div>
+        <div role="gridcell" aria-colindex="3">Value A2</div>
+        <div role="gridcell" aria-colindex="4">Value A3</div>
+      </div>
+      <div id="node1" role="group" aria-labelledby="toggleA" aria-hidden="false">
+        <!-- Subnode A1 -->
+        <div role="row" aria-level="2" aria-setsize="2" aria-posinset="1">
+          <div role="gridcell" aria-colindex="1">
+            <button aria-expanded="true" aria-controls="nodeA1" aria-label="Toggle Subdepartment A1" id="toggleA1">+</button>
+            Subdepartment A1
+          </div>
+          <div role="gridcell" aria-colindex="2">Value A1.1</div>
+          <div role="gridcell" aria-colindex="3">Value A1.2</div>
+          <div role="gridcell" aria-colindex="4">Value A1.3</div>
+        </div>
+        <div id="nodeA1" role="group" aria-labelledby="toggleA1" aria-hidden="false">
+          <!-- Subnode A1.1 -->
+          <div role="row" aria-level="3" aria-setsize="1" aria-posinset="1">
+            <div role="gridcell" aria-colindex="1">Employee A1.1</div>
+            <div role="gridcell" aria-colindex="2">Value A1.1.1</div>
+            <div role="gridcell" aria-colindex="3">Value A1.1.2</div>
+            <div role="gridcell" aria-colindex="4">Value A1.1.3</div>
+          </div>
+        </div>
+        <!-- Subnode A2 -->
+        <div role="row" aria-level="2" aria-setsize="2" aria-posinset="2">
+          <div role="gridcell" aria-colindex="1">Subdepartment A2</div>
+          <div role="gridcell" aria-colindex="2">Value A2.1</div>
+          <div role="gridcell" aria-colindex="3">Value A2.2</div>
+          <div role="gridcell" aria-colindex="4">Value A2.3</div>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div role="row" aria-level="1" aria-setsize="2" aria-posinset="2">
+        <div role="gridcell" aria-colindex="1">
+          <button aria-expanded="true" aria-controls="node2" aria-label="Toggle Department B" id="toggleB">+</button>
+          Department B
+        </div>
+        <div role="gridcell" aria-colindex="2">Value B1</div>
+        <div role="gridcell" aria-colindex="3">Value B2</div>
+        <div role="gridcell" aria-colindex="4">Value B3</div>
+      </div>
+      <div id="node2" role="group" aria-labelledby="toggleB" aria-hidden="false">
+        <!-- Subnode B1 -->
+        <div role="row" aria-level="2" aria-setsize="2" aria-posinset="1">
+          <div role="gridcell" aria-colindex="1">Subdepartment B1</div>
+          <div role="gridcell" aria-colindex="2">Value B1.1</div>
+          <div role="gridcell" aria-colindex="3">Value B1.2</div>
+          <div role="gridcell" aria-colindex="4">Value B1.3</div>
+        </div>
+        <!-- Subnode B2 -->
+        <div role="row" aria-level="2" aria-setsize="2" aria-posinset="2">
+          <div role="gridcell" aria-colindex="1">Subdepartment B2</div>
+          <div role="gridcell" aria-colindex="2">Value B2.1</div>
+          <div role="gridcell" aria-colindex="3">Value B2.2</div>
+          <div role="gridcell" aria-colindex="4">Value B2.3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="tree.js"></script>
+</body>
+</html>
